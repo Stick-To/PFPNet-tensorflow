@@ -314,14 +314,14 @@ class PFPNetR:
             fh2 = tf.transpose(fh2, [0, 3, 1, 2])
             fh3 = tf.transpose(fh3, [0, 3, 1, 2])
             fh4 = tf.transpose(fh4, [0, 3, 1, 2])
-        fl1 = self._conv_layer(fh1, 256 // 6, 1, 1, activation=tf.nn.relu)
-        fl1 = self._conv_layer(fl1, 256 // 3, 3, 1, activation=tf.nn.relu)
-        fl2 = self._conv_layer(fh2, 256 // 6, 1, 1, activation=tf.nn.relu)
-        fl2 = self._conv_layer(fl2, 256 // 3, 3, 1, activation=tf.nn.relu)
-        fl3 = self._conv_layer(fh3, 256 // 6, 1, 1, activation=tf.nn.relu)
-        fl3 = self._conv_layer(fl3, 256 // 3, 3, 1, activation=tf.nn.relu)
-        fl4 = self._conv_layer(fh4, 256 // 6, 1, 1, activation=tf.nn.relu)
-        fl4 = self._conv_layer(fl4, 256 // 3, 3, 1, activation=tf.nn.relu)
+        fl1 = self._conv_layer(fh1, 512 // 6, 1, 1, activation=tf.nn.relu)
+        fl1 = self._conv_layer(fl1, 512 // 3, 3, 1, activation=tf.nn.relu)
+        fl2 = self._conv_layer(fh2, 512 // 6, 1, 1, activation=tf.nn.relu)
+        fl2 = self._conv_layer(fl2, 512 // 3, 3, 1, activation=tf.nn.relu)
+        fl3 = self._conv_layer(fh3, 512 // 6, 1, 1, activation=tf.nn.relu)
+        fl3 = self._conv_layer(fl3, 512 // 3, 3, 1, activation=tf.nn.relu)
+        fl4 = self._conv_layer(fh4, 512 // 6, 1, 1, activation=tf.nn.relu)
+        fl4 = self._conv_layer(fl4, 512 // 3, 3, 1, activation=tf.nn.relu)
 
         feat1 = tf.concat(
             [
