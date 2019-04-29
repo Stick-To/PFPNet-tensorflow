@@ -329,7 +329,7 @@ class PFPNetR:
                 tf.image.resize_bilinear(fl2, [p1_h, p1_w], align_corners=True),
                 tf.image.resize_bilinear(fl3, [p1_h, p1_w], align_corners=True),
                 tf.image.resize_bilinear(fl4, [p1_h, p1_w], align_corners=True)
-            ], axis=-1
+            ], axis=-1 if self.data_format== 'channels_last' else 1
         )
         feat2 = tf.concat(
             [
@@ -337,7 +337,7 @@ class PFPNetR:
                 fh2,
                 tf.image.resize_bilinear(fl3, [p2_h, p2_w], align_corners=True),
                 tf.image.resize_bilinear(fl4, [p2_h, p2_w], align_corners=True)
-            ], axis=-1
+            ], axis=-1 if self.data_format== 'channels_last' else 1
         )
         feat3 = tf.concat(
             [
@@ -345,7 +345,7 @@ class PFPNetR:
                 tf.image.resize_bilinear(fl2, [p3_h, p3_w], align_corners=True),
                 fh3,
                 tf.image.resize_bilinear(fl4, [p3_h, p3_w], align_corners=True)
-            ], axis=-1
+            ], axis=-1 if self.data_format== 'channels_last' else 1
         )
         feat4 = tf.concat(
             [
@@ -353,7 +353,7 @@ class PFPNetR:
                 tf.image.resize_bilinear(fl2, [p4_h, p4_w], align_corners=True),
                 tf.image.resize_bilinear(fl3, [p4_h, p4_w], align_corners=True),
                 fh4
-            ], axis=-1
+            ], axis=-1 if self.data_format== 'channels_last' else 1
         )
 
         stride1 = 8
