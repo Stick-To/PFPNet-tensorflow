@@ -12,7 +12,9 @@ The pre-trained vgg_16.ckpt could be downloaded from http://download.tensorflow.
 # PFPNet-R512
 
 # Train your own data
-see readme.md of https://github.com/Stick-To/Object-Detection-API-Tensorflow
+### The training step is same as the step in 
+
+readme.md of https://github.com/Stick-To/Object-Detection-API-Tensorflow
 
 # Experimental Environment
 python3.7 tensorflow1.13
